@@ -123,4 +123,15 @@
     </release>
   </releases>
 
+  <developer id="jaydoubleu">
+    <name>Jay W</name>
+    <email>git.jaydoubleu@gmail.com</email>
+  </developer>
+
+  <repository>
+    <this>https://github.com/JayDoubleu/tweaks-lite</this>
+    <browse type="source">https://github.com/JayDoubleu/tweaks-lite</browse>
+    <browse type="issues">https://github.com/JayDoubleu/tweaks-lite/issues</browse>
+  </repository>
+
 </component>
