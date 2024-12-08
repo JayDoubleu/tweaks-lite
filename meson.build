@@ -7,7 +7,7 @@ project('tweaks-lite',
 i18n = import('i18n')
 gnome = import('gnome')
 
-# Python setup with UV support
+# Python setup
 python = import('python')
 python_installation = python.find_installation('python3',
   required: true,
@@ -22,10 +22,6 @@ dependency('libadwaita-1')
 prefix = get_option('prefix')
 bindir = join_paths(prefix, get_option('bindir'))
 python_dir = python_installation.get_install_dir()
-
-# Create virtual environment and install dependencies
-run_command('uv', 'venv', '.venv', check: true)
-run_command('.venv/bin/uv', 'pip', 'install', '-e', '.', check: true)
 
 # Install main executable
 install_data(

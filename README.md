@@ -61,8 +61,15 @@ sudo meson install
 - libadwaita-devel
 
 ### Flatpak Build
+You can build and install the Flatpak using either:
+
 ```bash
+# Simple build
 flatpak-builder --user --install --force-clean build dev.jaydoubleu.tweaks.lite.json
+
+# Or use the build script (recommended)
+chmod +x scripts/build-flatpak.sh
+./scripts/build-flatpak.sh
 ```
 
 ## Contributing
