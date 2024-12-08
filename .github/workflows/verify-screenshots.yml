@@ -1,0 +1,24 @@
+name: Verify Screenshots
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/dev.jaydoubleu.tweaks.lite.metainfo.xml.in'
+      - 'screenshots/**'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check screenshot URLs
+      run: |
+        for url in $(grep -o 'https://raw.githubusercontent.com/[^"]*\.png' data/dev.jaydoubleu.tweaks.lite.metainfo.xml.in); do
+          echo "Checking $url"
+          if ! curl --output /dev/null --silent --head --fail "$url"; then
+            echo "Error: Screenshot not accessible: $url"
+            exit 1
+          fi
+        done

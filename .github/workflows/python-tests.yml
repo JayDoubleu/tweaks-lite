@@ -19,3 +19,9 @@ jobs:
       with:
         file: ./coverage.xml
         fail_ci_if_error: true
+
+    - name: Validate AppStream metadata
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y appstream-util
+        appstream-util validate-relax --nonet data/dev.jaydoubleu.tweaks.lite.metainfo.xml.in
