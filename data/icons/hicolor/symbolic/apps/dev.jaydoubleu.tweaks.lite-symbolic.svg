@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Top toggle switch (ON) -->
+  <g transform="translate(3, 4) scale(0.225, 0.1875)">
+    <rect x="0" y="0" width="45" height="24" rx="12" fill="#000000"/>
+    <circle cx="33" cy="12" r="10" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Bottom toggle switch (OFF) -->
+  <g transform="translate(3, 9) scale(0.225, 0.1875)">
+    <rect x="0" y="0" width="45" height="24" rx="12" fill="#000000"/>
+    <circle cx="12" cy="12" r="10" fill="#FFFFFF"/>
+  </g>
+</svg>

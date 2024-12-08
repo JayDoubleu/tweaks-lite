@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.jaydoubleu.tweaks.lite</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Tweaks Lite</name>
+  <summary>A lightweight system configuration tool for GNOME</summary>
+  
+  <description>
+    <p>Tweaks Lite is a lightweight system configuration tool for GNOME, allowing you to customize various aspects of your desktop environment.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Modern GTK4 and libadwaita interface</li>
+      <li>Appearance and theme customization</li>
+      <li>Font settings management</li>
+      <li>Window behavior configuration</li>
+      <li>GNOME Shell extensions management</li>
+      <li>Startup applications control</li>
+    </ul>
+    <p>Credits and Acknowledgments:</p>
+    <ul>
+      <li>Based on GNOME Tweaks by the GNOME Project team (GPL-3.0)</li>
+      <li>Development assisted by Claude 3.5 Sonnet model from Anthropic</li>
+      <li>Developed using Cursor IDE</li>
+    </ul>
+  </description>
+
+  <developer_name>Jay W</developer_name>
+  <update_contact>git.jaydoubleu@gmail.com</update_contact>
+  
+  <provides>
+    <binary>tweaks-lite</binary>
+  </provides>
+
+  <kudos>
+    <kudo>ModernToolkit</kudo>
+    <kudo>HiDpiIcon</kudo>
+  </kudos>
+
+  <url type="homepage">https://github.com/JayDoubleu/tweaks-lite</url>
+  <url type="bugtracker">https://github.com/JayDoubleu/tweaks-lite/issues</url>
+  <url type="vcs-browser">https://github.com/JayDoubleu/tweaks-lite</url>
+  <url type="contribute">https://github.com/JayDoubleu/tweaks-lite/blob/main/CONTRIBUTING.md</url>
+  <url type="help">https://github.com/JayDoubleu/tweaks-lite/wiki</url>
+
+  <categories>
+    <category>Settings</category>
+    <category>DesktopSettings</category>
+    <category>GNOME</category>
+    <category>GTK</category>
+  </categories>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </requires>
+
+  <recommends>
+    <display_length compare="ge">768</display_length>
+  </recommends>
+
+  <translation type="gettext">tweaks-lite</translation>
+  <launchable type="desktop-id">dev.jaydoubleu.tweaks.lite.desktop</launchable>
+  <content_rating type="oars-1.1" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#ff00ff</color>
+    <color type="primary" scheme_preference="dark">#993d3d</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/main.png</image>
+      <caption>Main window showing available tweaks</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2024-03-21">
+      <description translate="no">
+        <p>Initial release of Tweaks-lite</p>
+        <ul>
+          <li>Basic system configuration options</li>
+          <li>GNOME Shell extensions management</li>
+          <li>Startup applications configuration</li>
+          <li>Font settings</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+</component>

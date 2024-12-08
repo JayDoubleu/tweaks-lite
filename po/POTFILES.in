@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/dev.jaydoubleu.tweaks.lite.desktop.in
+data/dev.jaydoubleu.tweaks.lite.metainfo.xml.in
+data/dev.jaydoubleu.tweaks.lite.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

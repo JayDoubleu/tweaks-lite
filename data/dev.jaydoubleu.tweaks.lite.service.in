@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=dev.jaydoubleu.tweaks.lite
+Exec=@bindir@/tweaks-lite --gapplication-service

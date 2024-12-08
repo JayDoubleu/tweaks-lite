@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="tweaks-lite">
+	<schema id="dev.jaydoubleu.tweaks.lite" path="/dev/jaydoubleu/tweaks/lite/">
+	</schema>
+</schemalist>
