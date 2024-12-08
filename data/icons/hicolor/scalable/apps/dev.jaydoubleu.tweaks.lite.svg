@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <!-- Background with large corner radius -->
   <rect x="14" y="14" width="100" height="100" rx="24" fill="#3584e4"/>
-  
+
   <!-- Subtle lighting gradient -->
   <rect x="14" y="14" width="100" height="50" rx="24" fill="#ffffff" opacity="0.1"/>
-  
+
   <!-- Top toggle switch (ON) -->
   <g transform="translate(34, 32) scale(1.5)">
     <rect x="0" y="0" width="40" height="24" rx="12" fill="#ffffff"/>
     <circle cx="28" cy="12" r="10" fill="#3584e4"/>
   </g>
-  
+
   <!-- Bottom toggle switch (OFF) -->
   <g transform="translate(34, 72) scale(1.5)">
     <rect x="0" y="0" width="40" height="24" rx="12" fill="#ffffff"/>

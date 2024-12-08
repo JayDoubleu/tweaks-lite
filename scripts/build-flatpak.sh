@@ -34,4 +34,4 @@ if [ $? -eq 0 ]; then
 else
     echo -e "${RED}Flatpak build failed!${NC}"
     exit 1
-fi 
+fi

@@ -66,4 +66,4 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/dev.jaydo
 
 %changelog
 * Wed Mar 13 2024 Jay W <git.jaydoubleu@gmail.com> - 1.0.0-1
-- Initial package release 
+- Initial package release

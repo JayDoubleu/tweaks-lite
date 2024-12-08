@@ -28,4 +28,18 @@ dev = [
     "pytest-cov>=6.0.0",
     "ruff>=0.8.0",
     "mypy>=1.13.0",
-] 
+]
+
+[tool.mypy]
+python_version = "3.10"  # Adjust to your Python version
+
+# Ignore missing imports for specific modules
+[[tool.mypy.overrides]]
+module = [
+    "gi.*",
+    "gi.repository.*",
+    "dbus.*",
+    "dbus.mainloop.*",
+    "dbus.mainloop.glib.*"
+]
+ignore_missing_imports = true

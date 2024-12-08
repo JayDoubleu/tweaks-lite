@@ -68,4 +68,4 @@ Before submitting a PR:
 
 ## Building Packages
 
-### Flatpak 
+### Flatpak

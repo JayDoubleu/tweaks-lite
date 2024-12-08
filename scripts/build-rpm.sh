@@ -16,7 +16,7 @@ print_status() {
 # Check if required tools are installed
 check_requirements() {
     print_status "Checking build requirements..."
-    
+
     local required_tools=("rpmbuild" "rpmdev-setuptree")
     local missing_tools=()
 
@@ -44,20 +44,20 @@ setup_build_env() {
 create_tarball() {
     print_status "Creating source tarball..."
     local tarball_name="tweaks-lite-${VERSION}.tar.gz"
-    
+
     # Create a temporary directory for the source
     local temp_dir=$(mktemp -d)
     local project_dir="$temp_dir/tweaks-lite-${VERSION}"
-    
+
     # Copy source files to temporary directory
     mkdir -p "$project_dir"
     cp -r * "$project_dir"
-    
+
     # Create tarball
     cd "$temp_dir"
     tar czf "$BUILD_ROOT/SOURCES/$tarball_name" "tweaks-lite-${VERSION}"
     cd "$SOURCE_DIR"
-    
+
     # Cleanup
     rm -rf "$temp_dir"
 }
@@ -66,7 +66,7 @@ create_tarball() {
 build_rpm() {
     print_status "Building RPM package..."
     rpmbuild -ba "$SPEC_FILE"
-    
+
     if [ $? -eq 0 ]; then
         print_status "RPM build completed successfully!"
         echo "RPMs can be found in: $BUILD_ROOT/RPMS/"
@@ -80,11 +80,11 @@ build_rpm() {
 # Main execution
 main() {
     print_status "Starting RPM build process for Tweaks Lite..."
-    
+
     check_requirements
     setup_build_env
     create_tarball
     build_rpm
 }
 
-main 
+main

@@ -5,7 +5,7 @@
   <project_license>GPL-3.0-or-later</project_license>
   <name>Tweaks Lite</name>
   <summary>A lightweight system configuration tool for GNOME</summary>
-  
+
   <description>
     <p>Tweaks Lite is a lightweight system configuration tool for GNOME, allowing you to customize various aspects of your desktop environment.</p>
     <p>Features:</p>
@@ -27,7 +27,7 @@
 
   <developer_name>Jay W</developer_name>
   <update_contact>git.jaydoubleu@gmail.com</update_contact>
-  
+
   <provides>
     <binary>tweaks-lite</binary>
   </provides>

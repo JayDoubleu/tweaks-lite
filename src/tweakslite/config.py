@@ -15,12 +15,12 @@ class Config:
             padding: 0;
             margin: 4px 0;
         }
-        
+
         .navigation-sidebar row.compact box {
             padding: 0;
             margin: 0;
         }
-        
+
         .navigation-sidebar row.compact separator {
             margin: 0 12px;
             opacity: 0.5;
@@ -78,7 +78,7 @@ class Config:
             font-weight: bold;
             font-size: 1em;
         }
-        
+
         .numeric {
             font-feature-settings: "tnum";
             font-family: monospace;
@@ -88,12 +88,12 @@ class Config:
             min-width: 60px;
             padding: 4px 12px;
         }
-        
+
         .button-group-first {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-        
+
         .button-group-last {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;

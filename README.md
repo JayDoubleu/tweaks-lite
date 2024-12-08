@@ -129,7 +129,7 @@ This project is licensed under the GPL-3.0 License - see the [COPYING](COPYING) 
 - Inspired by [GNOME Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks)
 - Built with [GTK4](https://gtk.org/) and [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/)
 - Development assisted by Claude 3.5 Sonnet model by Anthropic
-- Developed using [Cursor IDE](https://cursor.so/) 
+- Developed using [Cursor IDE](https://cursor.so/)
 
 ### Development Setup with UV
 
