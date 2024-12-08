@@ -51,16 +51,27 @@
     <category>GTK</category>
   </categories>
 
-  <requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+    <control>tablet</control>
     <display_length compare="ge">360</display_length>
+  </supports>
+
+  <requires>
     <control>keyboard</control>
     <control>pointing</control>
-    <control>touch</control>
   </requires>
 
   <recommends>
     <display_length compare="ge">768</display_length>
   </recommends>
+
+  <custom>
+    <value key="Purism::form_factor">workstation</value>
+    <value key="Purism::form_factor">mobile</value>
+  </custom>
 
   <translation type="gettext">tweaks-lite</translation>
   <launchable type="desktop-id">dev.jaydoubleu.tweaks.lite.desktop</launchable>
