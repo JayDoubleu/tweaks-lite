@@ -9,32 +9,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
+    - name: Build and run tests in Docker
       run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          python3-gi \
-          python3-gi-cairo \
-          python3-dbus \
-          gir1.2-gtk-4.0 \
-          libadwaita-1-0 \
-          dbus-x11 \
-          libdbus-1-dev \
-          libglib2.0-dev \
-          python3-gi-dev
-
-        # Install PyGObject via pip
-        pip install pygobject
-        pip install -r tests/requirements-test.txt
-
-    - name: Run tests
-      run: |
-        dbus-run-session -- pytest tests/ --cov=tweakslite --cov-report=xml
+        docker build -t tweakslite-tests .
+        docker run --rm -v ${PWD}:/coverage tweakslite-tests cp coverage.xml /coverage/
 
     - name: Upload coverage
       uses: codecov/codecov-action@v4
