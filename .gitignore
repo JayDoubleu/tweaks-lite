@@ -55,3 +55,25 @@ Thumbs.db
 
 # RPM build artifacts
 rpmbuild/
+
+# Test coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# Python test cache
+.pytest_cache/
+
+# UV virtual environment
+.venv/
+.uv/
+
+# Temporary files created during tests
+tmp/
+temp/
+
+# MyPy cache
+.mypy_cache/
+
+# Ruff cache
+.ruff_cache/

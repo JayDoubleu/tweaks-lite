@@ -7,6 +7,7 @@ authors = [
 ]
 dependencies = [
     "pygobject>=3.42.0",
+    "dbus-python>=1.3.2",
 ]
 requires-python = ">=3.9"
 license = {file = "COPYING"}
@@ -28,6 +29,7 @@ dev = [
     "pytest-cov>=6.0.0",
     "ruff>=0.8.0",
     "mypy>=1.13.0",
+    "pytest-mock>=3.10.0",
 ]
 
 [tool.mypy]
@@ -43,3 +45,27 @@ module = [
     "dbus.mainloop.glib.*"
 ]
 ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --cov=tweakslite --cov-report=term-missing"
+markers = [
+    "gtk: marks tests that require GTK initialization",
+]
+
+[tool.coverage.run]
+source = ["tweakslite"]
+omit = [
+    "tests/*",
+    "**/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+]

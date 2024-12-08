@@ -150,8 +150,11 @@ You can run commands in two ways:
 
 1. With activated virtual environment (after running `source .venv/bin/activate`):
 ```bash
-# Run tests
-pytest
+# Run tests (with DBus session)
+dbus-run-session -- pytest
+
+# Run tests with coverage
+dbus-run-session -- pytest --cov=tweakslite --cov-report=xml
 
 # Run linter
 ruff check .
@@ -165,8 +168,11 @@ mypy .
 
 2. Without activating (recommended):
 ```bash
-# Run tests
-uv run pytest
+# Run tests (with DBus session)
+dbus-run-session -- uv run pytest
+
+# Run tests with coverage
+dbus-run-session -- uv run pytest --cov=tweakslite --cov-report=xml
 
 # Run linter
 uv run ruff check .
@@ -177,3 +183,5 @@ uv run ruff format .
 # Type checking
 uv run mypy .
 ```
+
+Note: The `dbus-run-session` wrapper is required for tests that interact with DBus services (like GNOME Shell extensions management). This ensures tests have access to a clean DBus session.
