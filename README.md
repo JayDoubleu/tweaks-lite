@@ -72,6 +72,19 @@ chmod +x scripts/build-flatpak.sh
 ./scripts/build-flatpak.sh
 ```
 
+### RPM Build
+To build an RPM package, you'll need the following additional requirements:
+- rpm-build
+- rpmdevtools
+
+Then you can build the RPM using the provided script:
+```bash
+chmod +x scripts/build-rpm.sh
+./scripts/build-rpm.sh
+```
+
+The built RPMs will be available in `~/rpmbuild/RPMS/` and the source RPM in `~/rpmbuild/SRPMS/`.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
