@@ -12,4 +12,4 @@ __license__ = "GPL-3.0-or-later"
 __author__ = "Jay W"
 __copyright__ = "Copyright (C) 2024 Jay W"
 
-from .application import TweaksLiteApp 
+from .application import TweaksLiteApp

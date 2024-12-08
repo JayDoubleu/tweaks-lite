@@ -7,7 +7,7 @@ project('tweaks-lite',
 i18n = import('i18n')
 gnome = import('gnome')
 
-# Python setup
+# Python setup with UV support
 python = import('python')
 python_installation = python.find_installation('python3',
   required: true,
@@ -23,6 +23,10 @@ prefix = get_option('prefix')
 bindir = join_paths(prefix, get_option('bindir'))
 python_dir = python_installation.get_install_dir()
 
+# Create virtual environment and install dependencies
+run_command('uv', 'venv', '.venv', check: true)
+run_command('.venv/bin/uv', 'pip', 'install', '-e', '.', check: true)
+
 # Install main executable
 install_data(
   'src/main.py',
@@ -37,7 +41,7 @@ install_subdir(
   install_dir: python_dir
 )
 
-# Process subdirectories if they exist
+# Process subdirectories
 subdir('data')
 subdir('po')
 

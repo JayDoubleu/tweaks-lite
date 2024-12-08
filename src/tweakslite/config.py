@@ -4,9 +4,10 @@ import logging
 # Get logger for this module
 logger = logging.getLogger(__name__)
 
+
 class Config:
     """Configuration and shared resources for Tweaks Lite"""
-    
+
     # Application CSS
     CSS = """
         .navigation-sidebar row.compact {
@@ -125,4 +126,4 @@ class Config:
             )
             logger.debug("CSS loaded successfully")
         except Exception as e:
-            logger.error(f"Error loading CSS: {e}", exc_info=True) 
+            logger.error(f"Error loading CSS: {e}", exc_info=True)

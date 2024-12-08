@@ -9,13 +9,13 @@ from .startup_applications import View as StartupView
 from .extensions import View as ExtensionsView
 
 __all__ = [
-    'BaseView',
-    'FontsView',
-    'AppearanceView',
-    'SoundView',
-    'MouseView',
-    'KeyboardView',
-    'WindowsView',
-    'StartupView',
-    'ExtensionsView'
-] 
+    "BaseView",
+    "FontsView",
+    "AppearanceView",
+    "SoundView",
+    "MouseView",
+    "KeyboardView",
+    "WindowsView",
+    "StartupView",
+    "ExtensionsView",
+]

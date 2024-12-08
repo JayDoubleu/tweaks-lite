@@ -13,6 +13,7 @@ from dbus.mainloop.glib import DBusGMainLoop
 import json
 from ..utils import is_flatpak, run_command
 
+
 class DConfSettings:
     """Helper class to manage dconf settings"""
 
@@ -28,17 +29,15 @@ class DConfSettings:
             "mutter": Gio.Settings.new("org.gnome.mutter"),
         }
         self.dconf = Gio.Settings.new("org.gnome.desktop.interface")
-        
+
         # Setup dbus connection to dconf if not in Flatpak
         if not is_flatpak():
             bus = dbus.SessionBus()
             self.dconf_service = bus.get_object(
-                'ca.desrt.dconf', 
-                '/ca/desrt/dconf/Writer/user'
+                "ca.desrt.dconf", "/ca/desrt/dconf/Writer/user"
             )
             self.dconf_interface = dbus.Interface(
-                self.dconf_service,
-                dbus_interface='ca.desrt.dconf.Writer'
+                self.dconf_service, dbus_interface="ca.desrt.dconf.Writer"
             )
 
     def _get_full_key(self, schema, key):
@@ -49,7 +48,7 @@ class DConfSettings:
             "input-sources": "/org/gnome/desktop/input-sources/",
             "wm": "/org/gnome/desktop/wm/preferences/",
             "sound": "/org/gnome/desktop/sound/",
-            "mutter": "/org/gnome/mutter/"
+            "mutter": "/org/gnome/mutter/",
         }
         full_key = f"{schema_map[schema]}{key}"
         logger.debug(f"Getting full key path: {full_key}")
@@ -58,7 +57,7 @@ class DConfSettings:
     def _set_value_flatpak(self, schema, key, value, value_type):
         """Set a value using dconf command in Flatpak environment"""
         full_key = self._get_full_key(schema, key)
-        
+
         if value_type == "string":
             value = f"'{value}'"  # Wrap strings in quotes
         elif value_type == "boolean":
@@ -67,7 +66,7 @@ class DConfSettings:
             value = str(value)
         elif value_type == "strv":
             value = json.dumps(value)  # Convert list to JSON string
-            
+
         cmd = f"dconf write {full_key} {value}"
         return run_command(cmd, shell=True)
 
@@ -77,7 +76,9 @@ class DConfSettings:
 
     def set_string(self, schema, key, value):
         """Set a string value in dconf"""
-        logger.debug(f"Setting string value - schema: {schema}, key: {key}, value: {value}")
+        logger.debug(
+            f"Setting string value - schema: {schema}, key: {key}, value: {value}"
+        )
         if is_flatpak():
             self._set_value_flatpak(schema, key, value, "string")
         self.settings[schema].set_string(key, value)
@@ -174,4 +175,3 @@ class DConfSettings:
     def get_default_value(self, schema, key):
         """Get the default value for a key"""
         return self.settings[schema].get_default_value(key)
-  

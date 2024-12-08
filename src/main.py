@@ -25,30 +25,32 @@ gi.require_version("Adw", "1")
 from tweakslite.application import TweaksLiteApp
 from tweakslite.utils import setup_logging
 
+
 def signal_handler(signum, frame):
     """Handle interrupt signals gracefully"""
-    logger = logging.getLogger('tweakslite.main')
+    logger = logging.getLogger("tweakslite.main")
     logger.info("Received interrupt signal, shutting down gracefully...")
     sys.exit(0)
+
 
 def main():
     # Set up signal handlers
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
-    
+
     # Check for debug flag before GTK processes arguments
     debug_enabled = "--debug" in sys.argv
     if debug_enabled:
         # Remove debug flag so GTK doesn't complain
         sys.argv.remove("--debug")
-    
+
     # Setup logging
     setup_logging(debug_enabled)
-    
+
     # Get the logger for the main module
-    logger = logging.getLogger('tweakslite.main')
+    logger = logging.getLogger("tweakslite.main")
     logger.debug("Starting Tweaks Lite application")
-    
+
     try:
         # Run application
         app = TweaksLiteApp()
@@ -60,5 +62,6 @@ def main():
         logger.error(f"Unexpected error: {e}", exc_info=True)
         return 1
 
+
 if __name__ == "__main__":
-    sys.exit(main()) 
+    sys.exit(main())

@@ -5,6 +5,7 @@ import logging
 # Get logger for this module
 logger = logging.getLogger(__name__)
 
+
 class TweaksLiteApp(Adw.Application):
     """Main application class for Tweaks Lite"""
 
@@ -58,31 +59,29 @@ class TweaksLiteApp(Adw.Application):
             issue_url="https://github.com/JayDoubleu/tweaks-lite/issues",
             copyright="© 2024 Jay W",
             license_type=Gtk.License.GPL_3_0,
-            developers=[]
+            developers=[],
         )
-        
+
         # Add Code by section first
-        about.add_credit_section(
-            "Code by",
-            ["Jay W https://github.com/JayDoubleu"]
-        )
-        
+        about.add_credit_section("Code by", ["Jay W https://github.com/JayDoubleu"])
+
         # Add other credit sections
         about.add_credit_section(
-            "Based on", 
-            ["GNOME Tweaks by GNOME Project team https://gitlab.gnome.org/GNOME/gnome-tweaks"]
+            "Based on",
+            [
+                "GNOME Tweaks by GNOME Project team https://gitlab.gnome.org/GNOME/gnome-tweaks"
+            ],
         )
-        
+
         about.add_credit_section(
-            "Development Assistance", 
-            ["Claude 3.5 Sonnet model by Anthropic https://www.anthropic.com"]
+            "Development Assistance",
+            ["Claude 3.5 Sonnet model by Anthropic https://www.anthropic.com"],
         )
-        
+
         about.add_credit_section(
-            "Development Tools", 
-            ["Cursor IDE https://www.cursor.so"]
+            "Development Tools", ["Cursor IDE https://www.cursor.so"]
         )
-        
+
         about.present()
 
     def on_reset(self, action, param):
@@ -104,4 +103,4 @@ class TweaksLiteApp(Adw.Application):
                 window.reset_all_settings()
 
         dialog.connect("response", on_response)
-        dialog.present(self.props.active_window) 
+        dialog.present(self.props.active_window)

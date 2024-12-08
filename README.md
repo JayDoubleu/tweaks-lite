@@ -79,3 +79,50 @@ This project is licensed under the GPL-3.0 License - see the [COPYING](COPYING) 
 - Built with [GTK4](https://gtk.org/) and [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/)
 - Development assisted by Claude 3.5 Sonnet model by Anthropic
 - Developed using [Cursor IDE](https://cursor.so/) 
+
+### Development Setup with UV
+
+This project uses [UV](https://github.com/astral-sh/uv) for Python package management. UV is a fast, reliable Python package installer and resolver.
+
+#### Setup Development Environment
+```bash
+# Install the package with development dependencies
+uv pip install ".[dev]"
+
+# Activate the virtual environment (if you prefer working in an activated environment)
+source .venv/bin/activate
+```
+
+#### Development Commands
+
+You can run commands in two ways:
+
+1. With activated virtual environment (after running `source .venv/bin/activate`):
+```bash
+# Run tests
+pytest
+
+# Run linter
+ruff check .
+
+# Format code
+ruff format .
+
+# Type checking
+mypy .
+```
+
+2. Without activating (recommended):
+```bash
+# Run tests
+uv run pytest
+
+# Run linter
+uv run ruff check .
+
+# Format code
+uv run ruff format .
+
+# Type checking
+uv run mypy .
+```

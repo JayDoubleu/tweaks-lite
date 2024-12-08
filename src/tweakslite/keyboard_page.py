@@ -1,5 +1,6 @@
 from .utils import format_keyboard_option
 
+
 class KeyboardPage:
     def create_option_row(self, option_text):
         """Creates a row for a keyboard option"""

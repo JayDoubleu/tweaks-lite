@@ -1,0 +1,31 @@
+[project]
+name = "tweaks-lite"
+version = "1.0.0"
+description = "A lightweight system configuration tool for GNOME"
+authors = [
+    {name = "Jay W", email = "git.jaydoubleu@gmail.com"}
+]
+dependencies = [
+    "pygobject>=3.42.0",
+]
+requires-python = ">=3.9"
+license = {file = "COPYING"}
+readme = "README.md"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+packages = ["src/tweakslite"]
+
+[project.scripts]
+tweaks-lite = "tweakslite.main:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+] 
