@@ -25,11 +25,23 @@ GNOME Tweaks is a powerful tool, but it comes with a large number of dependencie
 
 ## Dependencies
 
+### Runtime Dependencies
 - Python 3.x
-- GTK 4.0
+- GTK 4.0 (gtk4)
 - libadwaita 1.0
 - GLib 2.0
+- python3-gobject >= 3.42.0
 - dbus-python
+
+### Build Dependencies
+- meson
+- ninja
+- python3-devel
+- gtk4-devel
+- libadwaita-devel
+- desktop-file-utils
+- gettext
+- glib2-devel
 
 ## Installation
 
@@ -54,13 +66,32 @@ sudo meson install
 ## Building
 
 ### Build Requirements
++ Common requirements for all build methods:
 - meson
 - ninja
 - python3-devel
 - gtk4-devel
 - libadwaita-devel
++ desktop-file-utils
++ gettext
++ glib2-devel
 
-### Flatpak Build
+### Build Methods
+
+#### 1. From Source (Development)
+```bash
+# Clone the repository
+git clone https://github.com/JayDoubleu/tweaks-lite.git
+cd tweaks-lite
+
+# Build using Meson
+meson setup builddir
+cd builddir
+meson compile
+sudo meson install
+```
+
+#### 2. Flatpak Build
 You can build and install the Flatpak using either:
 
 ```bash
@@ -72,7 +103,7 @@ chmod +x scripts/build-flatpak.sh
 ./scripts/build-flatpak.sh
 ```
 
-### RPM Build
+#### 3. RPM Build
 To build an RPM package, you'll need the following additional requirements:
 - rpm-build
 - rpmdevtools

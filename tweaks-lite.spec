@@ -22,7 +22,7 @@ BuildRequires:  gettext
 
 # Runtime dependencies - absolute minimum
 # For GTK/GLib bindings
-Requires:       python3-gobject
+Requires:       python3-gobject >= 3.42.0
 # Core GUI toolkit
 Requires:       gtk4
 # For Adw widgets
