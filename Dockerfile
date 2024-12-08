@@ -45,4 +45,4 @@ RUN /root/.cargo/bin/uv pip install pygobject && \
     /root/.cargo/bin/uv pip install -r tests/requirements-test.txt
 
 # Command to run tests
-CMD ["dbus-run-session", "--", "pytest", "tests/", "--cov=tweakslite", "--cov-report=xml"]
+CMD ["dbus-run-session", "--", "pytest", "tests/", "--cov=tweakslite", "--cov-report=xml:./coverage.xml"]

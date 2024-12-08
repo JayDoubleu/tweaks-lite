@@ -12,7 +12,7 @@ jobs:
     - name: Build and run tests in Docker
       run: |
         docker build -t tweakslite-tests .
-        docker run --rm -v ${PWD}:/coverage tweakslite-tests cp coverage.xml /coverage/
+        docker run --rm -v ${PWD}:/app tweakslite-tests
 
     - name: Upload coverage
       uses: codecov/codecov-action@v4
