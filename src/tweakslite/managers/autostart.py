@@ -1,5 +1,4 @@
 import os
-import shutil
 import logging
 from gi.repository import Gio
 from ..utils import is_flatpak, run_command

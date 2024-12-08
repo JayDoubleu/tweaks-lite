@@ -1,4 +1,4 @@
-from gi.repository import Gtk, Adw, GLib, Pango
+from gi.repository import Gtk, Adw
 from .base import BaseView
 
 
@@ -12,7 +12,7 @@ class View(BaseView):
 
         # Get available fonts
         fonts = self.get_system_fonts()
-        font_model = Gtk.StringList.new(fonts)
+        self.font_model = Gtk.StringList.new(fonts)
 
         # Create font rows with size selectors
         font_configs = [

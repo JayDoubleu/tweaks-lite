@@ -1,3 +1,4 @@
+from gi.repository import Gtk
 from .utils import format_keyboard_option
 
 

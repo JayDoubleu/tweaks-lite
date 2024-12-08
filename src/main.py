@@ -19,9 +19,12 @@ import gi
 import logging
 import signal
 
+# Set GTK versions before importing GTK-dependent modules
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
+# Import local modules after GTK version setup
+# ruff: noqa: E402
 from tweakslite.application import TweaksLiteApp
 from tweakslite.utils import setup_logging
 

@@ -1,4 +1,4 @@
-from gi.repository import Adw, Gtk, GLib, Gio
+from gi.repository import Adw, Gtk, Gio
 from .managers import DConfSettings, AutostartManager
 from .config import Config
 import logging

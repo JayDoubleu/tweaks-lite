@@ -1,17 +1,30 @@
-import gi
-
-gi.require_version("Gtk", "4.0")
-gi.require_version("Adw", "1")
-from gi.repository import Gtk, Adw, Gio, GLib
-import sys
+# Standard library imports
 import os
-import json
+import sys
 import dbus
 
-# Add the parent directory to the Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-from tweakslite.views.base import BaseView
-from tweakslite.utils import is_flatpak, run_command
+# Third party imports
+import gi
+
+# Configure gi versions before any gi.repository imports
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
+
+# Import gi.repository components
+from gi.repository import (  # noqa: E402
+    Gtk,
+    Adw,
+    Gio,
+    GLib,
+)
+
+# Configure import paths
+if os.path.dirname(os.path.dirname(os.path.dirname(__file__))) not in sys.path:
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+# Local imports - these need the path configuration above
+from tweakslite.views.base import BaseView  # noqa: E402
+from tweakslite.utils import is_flatpak  # noqa: E402
 
 
 class ExtensionState:
@@ -205,13 +218,15 @@ class View(BaseView):
                 if enable:
                     try:
                         extensions_iface.EnableExtension(str(uuid))
-                    except:
-                        pass  # Skip if extension can't be enabled
+                    except Exception as e:
+                        print(f"Could not enable extension {uuid}: {e}")
+                        continue  # Skip if extension can't be enabled
                 else:
                     try:
                         extensions_iface.DisableExtension(str(uuid))
-                    except:
-                        pass  # Skip if extension can't be disabled
+                    except Exception as e:
+                        print(f"Could not disable extension {uuid}: {e}")
+                        continue  # Skip if extension can't be disabled
 
             # Update dconf setting
             settings = Gio.Settings.new("org.gnome.shell")

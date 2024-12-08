@@ -1,7 +1,7 @@
 from gi.repository import Gtk, Adw, Gio, GLib
 from .base import BaseView
 import os
-from ..utils import is_flatpak, run_command, debug_print
+from ..utils import is_flatpak, run_command
 from ..desktop_entry import DesktopEntry
 import tempfile
 import shutil

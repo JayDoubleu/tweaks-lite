@@ -1,6 +1,5 @@
 import os
 import logging
-from gi.repository import Gio, GLib
 
 # Get logger for this module
 logger = logging.getLogger("tweakslite.desktop_entry")

@@ -1,17 +1,17 @@
-import gi
+import json
 import logging
+import dbus
+from dbus.mainloop.glib import DBusGMainLoop
+import gi
+
+from gi.repository import Gio
+from ..utils import is_flatpak, run_command
 
 # Get logger for this module
 logger = logging.getLogger(__name__)
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-
-from gi.repository import Gio, GLib
-import dbus
-from dbus.mainloop.glib import DBusGMainLoop
-import json
-from ..utils import is_flatpak, run_command
 
 
 class DConfSettings:

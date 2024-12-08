@@ -1,12 +1,14 @@
+# Third party imports
 import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 gi.require_version("GnomeDesktop", "4.0")
+from gi.repository import Gtk, Adw, GnomeDesktop, GLib  # noqa: E402
 
-from gi.repository import Gtk, Adw, GnomeDesktop, GLib, Gio
-from .base import BaseView
-from ..utils import format_keyboard_option
+# Local imports
+from .base import BaseView  # noqa: E402
+from ..utils import format_keyboard_option  # noqa: E402
 
 
 class View(BaseView):
