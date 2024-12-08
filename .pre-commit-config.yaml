@@ -31,4 +31,4 @@ repos:
     rev: 0.30.0
     hooks:
       - id: check-github-workflows
-      - id: check-metaschema 
+      - id: check-metaschema
