@@ -1,9 +1,10 @@
-name: Python Tests
+name: Tests & Validation
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  validate:
+    name: Run Tests & Validate
     runs-on: ubuntu-latest
 
     steps:

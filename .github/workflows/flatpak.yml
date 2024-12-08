@@ -1,4 +1,4 @@
-name: Flatpak Build
+name: Flatpak Build & Test
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  flatpak:
+  build-flatpak:
+    name: Build & Verify Flatpak
     runs-on: ubuntu-latest
 
     steps:
