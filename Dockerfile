@@ -33,6 +33,7 @@ RUN curl -LsSf https://github.com/astral-sh/uv/releases/download/0.1.24/uv-insta
 ENV VIRTUAL_ENV=/app/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PATH="/root/.cargo/bin:$PATH"
 
 # Set working directory
 WORKDIR /app
@@ -40,9 +41,9 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
-# Install Python dependencies using uv with full path
-RUN /root/.cargo/bin/uv pip install pygobject && \
-    /root/.cargo/bin/uv pip install -r tests/requirements-test.txt
+# Install Python dependencies using uv
+RUN uv pip install pygobject && \
+    uv pip install -r tests/requirements-test.txt
 
-# Command to run tests
-CMD ["dbus-run-session", "--", "pytest", "tests/", "--cov=tweakslite", "--cov-report=xml:./coverage.xml"]
+# Command to run tests using pytest from the virtual environment
+CMD ["dbus-run-session", "--", "/app/venv/bin/pytest", "tests/", "--cov=tweakslite", "--cov-report=xml:./coverage.xml"]

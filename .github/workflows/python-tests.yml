@@ -12,13 +12,14 @@ jobs:
     - name: Build and run tests in Docker
       run: |
         docker build -t tweakslite-tests .
-        docker run --rm -v ${PWD}:/app tweakslite-tests
+        docker run --name test-run tweakslite-tests
+        docker cp test-run:/app/coverage.xml ./coverage.xml
+        docker rm test-run
 
-    - name: Upload coverage
-      uses: codecov/codecov-action@v4
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
       with:
-        file: ./coverage.xml
-        fail_ci_if_error: true
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Validate AppStream metadata
       run: |

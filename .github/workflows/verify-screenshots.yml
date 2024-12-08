@@ -6,6 +6,7 @@ on:
     paths:
       - 'data/dev.jaydoubleu.tweaks.lite.metainfo.xml.in'
       - 'screenshots/**'
+  workflow_dispatch:
 
 jobs:
   verify:
