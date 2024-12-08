@@ -40,6 +40,7 @@
   <url type="homepage">https://github.com/JayDoubleu/tweaks-lite</url>
   <url type="bugtracker">https://github.com/JayDoubleu/tweaks-lite/issues</url>
   <url type="vcs-browser">https://github.com/JayDoubleu/tweaks-lite</url>
+  <url type="source">https://github.com/JayDoubleu/tweaks-lite</url>
   <url type="contribute">https://github.com/JayDoubleu/tweaks-lite/blob/main/CONTRIBUTING.md</url>
   <url type="help">https://github.com/JayDoubleu/tweaks-lite/wiki</url>
 
@@ -54,6 +55,7 @@
     <display_length compare="ge">360</display_length>
     <control>keyboard</control>
     <control>pointing</control>
+    <control>touch</control>
   </requires>
 
   <recommends>
@@ -71,8 +73,28 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/main.png</image>
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/main-window.png</image>
       <caption>Main window showing available tweaks</caption>
+    </screenshot>
+    <screenshot>
+      <caption>Main window showing appearance settings</caption>
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/appearance.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Font configuration options</caption>
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/fonts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Startup applications management</caption>
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/startup.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>GNOME Shell extensions management</caption>
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/extensions.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Adaptive layout for mobile devices</caption>
+      <image>https://raw.githubusercontent.com/JayDoubleu/tweaks-lite/main/screenshots/main-window-mobile.png</image>
     </screenshot>
   </screenshots>
 
