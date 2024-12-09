@@ -34,7 +34,14 @@ install_data(
 # Install Python package
 install_subdir(
   'src/tweakslite',
-  install_dir: python_dir
+  install_dir: python_dir,
+  exclude_files: ['__pycache__']
+)
+
+# Install py.typed marker
+install_data(
+  'src/tweakslite/py.typed',
+  install_dir: join_paths(python_dir, 'tweakslite')
 )
 
 # Process subdirectories

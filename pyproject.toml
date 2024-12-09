@@ -20,6 +20,12 @@ build-backend = "hatchling.build"
 [tool.hatch.build]
 packages = ["src/tweakslite"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/tweakslite"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"src/tweakslite/py.typed" = "tweakslite/py.typed"
+
 [project.scripts]
 tweaks-lite = "tweakslite.main:main"
 
@@ -49,13 +55,15 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = "test_*.py"
-addopts = "-v --cov=tweakslite --cov-report=term-missing"
+addopts = "-v --cov=src/tweakslite --cov-report=term-missing"
 markers = [
     "gtk: marks tests that require GTK initialization",
 ]
 
 [tool.coverage.run]
-source = ["tweakslite"]
+source = ["src/tweakslite"]
+relative_files = true
+branch = true
 omit = [
     "tests/*",
     "**/__init__.py",
