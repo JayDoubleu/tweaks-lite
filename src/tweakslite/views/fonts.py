@@ -12,7 +12,6 @@ class View(BaseView):
 
         # Get available fonts
         fonts = self.get_system_fonts()
-        self.font_model = Gtk.StringList.new(fonts)
 
         # Create font rows with size selectors
         font_configs = [

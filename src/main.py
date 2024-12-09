@@ -15,18 +15,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
-import gi
 import logging
 import signal
+import gi
 
-# Set GTK versions before importing GTK-dependent modules
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-
-# Import local modules after GTK version setup
-# ruff: noqa: E402
-from tweakslite.application import TweaksLiteApp
-from tweakslite.utils import setup_logging
+from tweakslite.application import TweaksLiteApp  # noqa: E402
+from tweakslite.utils import setup_logging  # noqa: E402
 
 
 def signal_handler(signum, frame):

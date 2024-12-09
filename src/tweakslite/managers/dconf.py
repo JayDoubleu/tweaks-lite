@@ -1,17 +1,16 @@
-import json
-import logging
-import dbus
-from dbus.mainloop.glib import DBusGMainLoop
 import gi
+import logging
 
-from gi.repository import Gio
-from ..utils import is_flatpak, run_command
-
-# Get logger for this module
 logger = logging.getLogger(__name__)
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
+
+from gi.repository import Gio  # noqa: E402
+import dbus  # noqa: E402
+from dbus.mainloop.glib import DBusGMainLoop  # noqa: E402
+import json  # noqa: E402
+from ..utils import is_flatpak, run_command  # noqa: E402
 
 
 class DConfSettings:

@@ -1,28 +1,14 @@
-# Standard library imports
-import os
-import sys
-import dbus
-
-# Third party imports
 import gi
 
-# Configure gi versions before any gi.repository imports
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
+from gi.repository import Gtk, Adw, Gio, GLib  # noqa: E402
+import sys  # noqa: E402
+import os  # noqa: E402
+import dbus  # noqa: E402
 
-# Import gi.repository components
-from gi.repository import (  # noqa: E402
-    Gtk,
-    Adw,
-    Gio,
-    GLib,
-)
-
-# Configure import paths
-if os.path.dirname(os.path.dirname(os.path.dirname(__file__))) not in sys.path:
-    sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-
-# Local imports - these need the path configuration above
+# Add the parent directory to the Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from tweakslite.views.base import BaseView  # noqa: E402
 from tweakslite.utils import is_flatpak  # noqa: E402
 
@@ -220,13 +206,13 @@ class View(BaseView):
                         extensions_iface.EnableExtension(str(uuid))
                     except Exception as e:
                         print(f"Could not enable extension {uuid}: {e}")
-                        continue  # Skip if extension can't be enabled
+                        pass  # Skip if extension can't be enabled
                 else:
                     try:
                         extensions_iface.DisableExtension(str(uuid))
                     except Exception as e:
                         print(f"Could not disable extension {uuid}: {e}")
-                        continue  # Skip if extension can't be disabled
+                        pass  # Skip if extension can't be disabled
 
             # Update dconf setting
             settings = Gio.Settings.new("org.gnome.shell")

@@ -1,5 +1,8 @@
-from gi.repository import Gtk
-from .utils import format_keyboard_option
+import gi
+
+gi.require_version("Gtk", "4.0")
+from gi.repository import Gtk  # noqa: E402
+from .utils import format_keyboard_option  # noqa: E402
 
 
 class KeyboardPage:
